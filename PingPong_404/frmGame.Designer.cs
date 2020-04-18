@@ -43,9 +43,13 @@
             this.btnLinks = new System.Windows.Forms.Button();
             this.btnRechts = new System.Windows.Forms.Button();
             this.btnRunter = new System.Windows.Forms.Button();
+            this.grpSteuerung = new System.Windows.Forms.GroupBox();
+            this.rdbSchläger = new System.Windows.Forms.RadioButton();
+            this.rdbBall = new System.Windows.Forms.RadioButton();
             this.pnlSpiel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSchlägerRechts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBall)).BeginInit();
+            this.grpSteuerung.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlSpiel
@@ -174,11 +178,46 @@
             this.btnRunter.UseVisualStyleBackColor = false;
             this.btnRunter.Click += new System.EventHandler(this.Verschieben_Click);
             // 
+            // grpSteuerung
+            // 
+            this.grpSteuerung.Controls.Add(this.rdbSchläger);
+            this.grpSteuerung.Controls.Add(this.rdbBall);
+            this.grpSteuerung.Location = new System.Drawing.Point(588, 375);
+            this.grpSteuerung.Name = "grpSteuerung";
+            this.grpSteuerung.Size = new System.Drawing.Size(200, 100);
+            this.grpSteuerung.TabIndex = 10;
+            this.grpSteuerung.TabStop = false;
+            this.grpSteuerung.Text = "Wahl der Steuerung";
+            // 
+            // rdbSchläger
+            // 
+            this.rdbSchläger.AutoSize = true;
+            this.rdbSchläger.Location = new System.Drawing.Point(7, 44);
+            this.rdbSchläger.Name = "rdbSchläger";
+            this.rdbSchläger.Size = new System.Drawing.Size(114, 17);
+            this.rdbSchläger.TabIndex = 1;
+            this.rdbSchläger.Text = "Schlägersteuerung";
+            this.rdbSchläger.UseVisualStyleBackColor = true;
+            this.rdbSchläger.CheckedChanged += new System.EventHandler(this.rdbSchläger_CheckedChanged);
+            // 
+            // rdbBall
+            // 
+            this.rdbBall.AutoSize = true;
+            this.rdbBall.Checked = true;
+            this.rdbBall.Location = new System.Drawing.Point(7, 20);
+            this.rdbBall.Name = "rdbBall";
+            this.rdbBall.Size = new System.Drawing.Size(89, 17);
+            this.rdbBall.TabIndex = 0;
+            this.rdbBall.TabStop = true;
+            this.rdbBall.Text = "Ballsteuerung";
+            this.rdbBall.UseVisualStyleBackColor = true;
+            // 
             // frmPingPong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 484);
+            this.Controls.Add(this.grpSteuerung);
             this.Controls.Add(this.btnRunter);
             this.Controls.Add(this.btnRechts);
             this.Controls.Add(this.btnLinks);
@@ -197,6 +236,8 @@
             this.pnlSpiel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picSchlägerRechts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBall)).EndInit();
+            this.grpSteuerung.ResumeLayout(false);
+            this.grpSteuerung.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -216,6 +257,9 @@
         private System.Windows.Forms.Button btnLinks;
         private System.Windows.Forms.Button btnRechts;
         private System.Windows.Forms.Button btnRunter;
+        private System.Windows.Forms.GroupBox grpSteuerung;
+        private System.Windows.Forms.RadioButton rdbSchläger;
+        private System.Windows.Forms.RadioButton rdbBall;
     }
 }
 
