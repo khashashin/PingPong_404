@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPingPong));
             this.pnlSpiel = new System.Windows.Forms.Panel();
             this.picSchlägerRechts = new System.Windows.Forms.PictureBox();
             this.picBall = new System.Windows.Forms.PictureBox();
@@ -37,6 +38,11 @@
             this.vsbSchlägerRechts = new System.Windows.Forms.VScrollBar();
             this.lblPunkte = new System.Windows.Forms.Label();
             this.txtPunkte = new System.Windows.Forms.TextBox();
+            this.lblText = new System.Windows.Forms.Label();
+            this.btnHoch = new System.Windows.Forms.Button();
+            this.btnLinks = new System.Windows.Forms.Button();
+            this.btnRechts = new System.Windows.Forms.Button();
+            this.btnRunter = new System.Windows.Forms.Button();
             this.pnlSpiel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSchlägerRechts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBall)).BeginInit();
@@ -106,25 +112,88 @@
             // 
             // txtPunkte
             // 
-            this.txtPunkte.Location = new System.Drawing.Point(63, 345);
+            this.txtPunkte.Location = new System.Drawing.Point(99, 345);
             this.txtPunkte.Name = "txtPunkte";
             this.txtPunkte.Size = new System.Drawing.Size(100, 20);
             this.txtPunkte.TabIndex = 4;
             this.txtPunkte.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // lblText
+            // 
+            this.lblText.Location = new System.Drawing.Point(96, 372);
+            this.lblText.Name = "lblText";
+            this.lblText.Size = new System.Drawing.Size(291, 103);
+            this.lblText.TabIndex = 5;
+            this.lblText.Text = "Anleitung";
+            // 
+            // btnHoch
+            // 
+            this.btnHoch.BackColor = System.Drawing.Color.White;
+            this.btnHoch.Image = ((System.Drawing.Image)(resources.GetObject("btnHoch.Image")));
+            this.btnHoch.Location = new System.Drawing.Point(672, 149);
+            this.btnHoch.Name = "btnHoch";
+            this.btnHoch.Size = new System.Drawing.Size(45, 25);
+            this.btnHoch.TabIndex = 6;
+            this.btnHoch.Tag = "ho";
+            this.btnHoch.UseVisualStyleBackColor = false;
+            this.btnHoch.Click += new System.EventHandler(this.Verschieben_Click);
+            // 
+            // btnLinks
+            // 
+            this.btnLinks.BackColor = System.Drawing.Color.White;
+            this.btnLinks.Image = ((System.Drawing.Image)(resources.GetObject("btnLinks.Image")));
+            this.btnLinks.Location = new System.Drawing.Point(639, 180);
+            this.btnLinks.Name = "btnLinks";
+            this.btnLinks.Size = new System.Drawing.Size(35, 25);
+            this.btnLinks.TabIndex = 7;
+            this.btnLinks.Tag = "li";
+            this.btnLinks.UseVisualStyleBackColor = false;
+            this.btnLinks.Click += new System.EventHandler(this.Verschieben_Click);
+            // 
+            // btnRechts
+            // 
+            this.btnRechts.BackColor = System.Drawing.Color.White;
+            this.btnRechts.Image = ((System.Drawing.Image)(resources.GetObject("btnRechts.Image")));
+            this.btnRechts.Location = new System.Drawing.Point(713, 180);
+            this.btnRechts.Name = "btnRechts";
+            this.btnRechts.Size = new System.Drawing.Size(35, 25);
+            this.btnRechts.TabIndex = 8;
+            this.btnRechts.Tag = "re";
+            this.btnRechts.UseVisualStyleBackColor = false;
+            this.btnRechts.Click += new System.EventHandler(this.Verschieben_Click);
+            // 
+            // btnRunter
+            // 
+            this.btnRunter.BackColor = System.Drawing.Color.White;
+            this.btnRunter.Image = ((System.Drawing.Image)(resources.GetObject("btnRunter.Image")));
+            this.btnRunter.Location = new System.Drawing.Point(672, 211);
+            this.btnRunter.Name = "btnRunter";
+            this.btnRunter.Size = new System.Drawing.Size(45, 25);
+            this.btnRunter.TabIndex = 9;
+            this.btnRunter.Tag = "ru";
+            this.btnRunter.UseVisualStyleBackColor = false;
+            this.btnRunter.Click += new System.EventHandler(this.Verschieben_Click);
+            // 
             // frmPingPong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 484);
+            this.Controls.Add(this.btnRunter);
+            this.Controls.Add(this.btnRechts);
+            this.Controls.Add(this.btnLinks);
+            this.Controls.Add(this.btnHoch);
+            this.Controls.Add(this.lblText);
             this.Controls.Add(this.txtPunkte);
             this.Controls.Add(this.lblPunkte);
             this.Controls.Add(this.vsbSchlägerRechts);
             this.Controls.Add(this.btnStart);
             this.Controls.Add(this.pnlSpiel);
+            this.KeyPreview = true;
             this.Name = "frmPingPong";
             this.Text = "Ping-Pong Spiel";
             this.Load += new System.EventHandler(this.frmPingPong_Load);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.frmPingPong_KeyUp);
             this.pnlSpiel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picSchlägerRechts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBall)).EndInit();
@@ -142,6 +211,12 @@
         private System.Windows.Forms.VScrollBar vsbSchlägerRechts;
         private System.Windows.Forms.Label lblPunkte;
         private System.Windows.Forms.TextBox txtPunkte;
+        private System.Windows.Forms.Label lblText;
+        private System.Windows.Forms.Button btnHoch;
+        private System.Windows.Forms.Button btnLinks;
+        private System.Windows.Forms.Button btnRechts;
+        private System.Windows.Forms.Button btnRunter;
     }
 }
 
+    
