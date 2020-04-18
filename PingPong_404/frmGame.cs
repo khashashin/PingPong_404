@@ -19,6 +19,7 @@ namespace PingPong_404
 
         int x = 5;
         int y = 2;
+        int Geschwindigkeit = 20;
         public int Punkte = 0;
         string Verschiebung;
         List<Control> lstSchlägersteuerung = new List<Control>();
@@ -220,6 +221,20 @@ namespace PingPong_404
         {
             Verschiebung = Convert.ToString(((Button)sender).Tag);
             BallVerschieben(Verschiebung);
+        }
+
+        private void txtPunkte_TextChanged(object sender, EventArgs e)
+        {
+            if (Convert.ToInt32(txtPunkte.Text) % 50 == 0 & Convert.ToInt32(txtPunkte.Text) != 0) 
+            {
+                var rand = new Zufallsmethoden();
+                picBall.BackColor = rand.ErzeugeZufallsfarbe();
+
+                if (Geschwindigkeit >= 5)
+                {
+                    Geschwindigkeit = Geschwindigkeit - 5;
+                }
+            }
         }
     }
 }
