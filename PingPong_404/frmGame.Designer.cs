@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPingPong));
             this.pnlSpiel = new System.Windows.Forms.Panel();
             this.picSchlägerRechts = new System.Windows.Forms.PictureBox();
             this.picBall = new System.Windows.Forms.PictureBox();
@@ -121,6 +120,7 @@
             this.txtPunkte.Size = new System.Drawing.Size(100, 20);
             this.txtPunkte.TabIndex = 4;
             this.txtPunkte.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtPunkte.TextChanged += new System.EventHandler(this.txtPunkte_TextChanged);
             // 
             // lblText
             // 
@@ -133,7 +133,7 @@
             // btnHoch
             // 
             this.btnHoch.BackColor = System.Drawing.Color.White;
-            this.btnHoch.Image = ((System.Drawing.Image)(resources.GetObject("btnHoch.Image")));
+            this.btnHoch.Image = global::PingPong_404.Properties.Resources.hoch;
             this.btnHoch.Location = new System.Drawing.Point(672, 149);
             this.btnHoch.Name = "btnHoch";
             this.btnHoch.Size = new System.Drawing.Size(45, 25);
@@ -145,7 +145,7 @@
             // btnLinks
             // 
             this.btnLinks.BackColor = System.Drawing.Color.White;
-            this.btnLinks.Image = ((System.Drawing.Image)(resources.GetObject("btnLinks.Image")));
+            this.btnLinks.Image = global::PingPong_404.Properties.Resources.links;
             this.btnLinks.Location = new System.Drawing.Point(639, 180);
             this.btnLinks.Name = "btnLinks";
             this.btnLinks.Size = new System.Drawing.Size(35, 25);
@@ -157,7 +157,7 @@
             // btnRechts
             // 
             this.btnRechts.BackColor = System.Drawing.Color.White;
-            this.btnRechts.Image = ((System.Drawing.Image)(resources.GetObject("btnRechts.Image")));
+            this.btnRechts.Image = global::PingPong_404.Properties.Resources.rechts;
             this.btnRechts.Location = new System.Drawing.Point(713, 180);
             this.btnRechts.Name = "btnRechts";
             this.btnRechts.Size = new System.Drawing.Size(35, 25);
@@ -169,7 +169,7 @@
             // btnRunter
             // 
             this.btnRunter.BackColor = System.Drawing.Color.White;
-            this.btnRunter.Image = ((System.Drawing.Image)(resources.GetObject("btnRunter.Image")));
+            this.btnRunter.Image = global::PingPong_404.Properties.Resources.runter;
             this.btnRunter.Location = new System.Drawing.Point(672, 211);
             this.btnRunter.Name = "btnRunter";
             this.btnRunter.Size = new System.Drawing.Size(45, 25);
